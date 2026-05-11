@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+    <Name value="MakeItRealistic" />
+    <DisplayName value="Make It Realistic - Rasgos Heredados" />
+    <Version value="1.0.0" />
+    <Description value="Asigna un handicap y/o buff aleatorio al personaje en su primera aparicion. Simula rasgos heredados (asma, sensibilidad estomacal, debilidad, etc.) para hacer cada partida unica y mas realista. 60% solo handicap, 25% handicap+buff, 10% nada, 5% solo buff." />
+    <Author value="Miguel" />
+    <Website value="" />
+</xml>
