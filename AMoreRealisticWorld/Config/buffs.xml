@@ -62,11 +62,6 @@
             <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll12" operation="set" value="0"/>
             <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll13" operation="set" value="0"/>
 
-            <!-- Reset CVars de Boss Progression -->
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$bpQuestsOffered" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$bpTraderDefenseOffered" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$bpFinalOffered" operation="set" value="0"/>
-
             <!-- Remove handicaps existentes -->
             <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="handicapSensibilidad"/>
             <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="handicapAsma"/>
@@ -100,15 +95,11 @@
             <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffCarismatico"/>
             <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffEquilibrio"/>
 
-            <!-- Remover los buffs de boss progression para forzar re-aplicacion limpia -->
+            <!-- Remover el trait roller para forzar re-aplicacion limpia -->
             <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="realisticTraitRoller"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="bpQuestOffer"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="bpProgressionTracker"/>
 
-            <!-- Re-trigger los rollers despues del reset (fresh onSelfBuffStart) -->
+            <!-- Re-trigger el roller despues del reset (fresh onSelfBuffStart) -->
             <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="realisticTraitRoller" target="self"/>
-            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="bpQuestOffer" target="self"/>
-            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="bpProgressionTracker" target="self"/>
         </effect_group>
     </buff>
 
@@ -647,4 +638,14 @@
         </effect_group>
     </buff>
 
-    <buff name
+    <buff name="handicapInmuneDebil" name_key="handicapInmuneDebilName" description_key="handicapInmuneDebilDesc" tooltip_key="handicapInmuneDebilName" icon="ui_game_symbol_infection" icon_color="200,100,100" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHandicapDone" operation="set" value="1"/>
+            <passive_effect name="BuffResistance" operation="base_add" value="-.075" tags="buffInfection01,buffInfection02,buffInfection03,buffInfection04"/>
+        </effect_group>
+    </buff>
+
+    <buff name="handicapSangreLigera" name_key="handicapSangreLigeraName" description_key="handicapSangreLigeraDesc" tooltip_key="handicapSangreLigeraName" icon="ui_game_symbol_laceration" icon_color="200,100,100" remove_on_death="false">
+        <stack_type v
