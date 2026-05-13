@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configs>
+<append xpath="/quests">
+
+    <!--
+        BIOME CHAMPION QUESTS (5)
+        - One-time quests (repeatable=false)
+        - Auto-completed when boss is killed
+        - On complete: trigger event that sets killed CVar
+        - Quest sends player to specific biome POI, then spawns boss there
+
+        FINAL BOSS QUEST (1)
+        - Prerequisites: all 5 champion quests completed
+        - Killing the Executioner sets $bpFinalKilled = 1
+    -->
+
+    <!-- ===== FOREST CHAMPION: The Druid ===== -->
+    <quest id="questBpForestChampion">
+        <property name="name_key" value="questBpForestChampion_name"/>
+        <property name="subtitle_key" value="questBpForestChampion_subtitle"/>
+        <property name="description_key" value="questBpForestChampion_description"/>
+        <property name="icon" value="ui_game_symbol_skull"/>
+        <property name="repeatable" value="false"/>
+        <property name="category_key" value="quest"/>
+        <property name="difficulty_tier" value="5"/>
+        <property name="offer_key" value="questBpForestChampion_offer"/>
+        <property name="statement_key" value="questBpForestChampion_statement"/>
+        <property name="response_key" value="questBpForestChampion_response"/>
+        <property name="completiontype" value="AutoComplete"/>
+        <property name="completion_key" value="questBpForestChampion_completion"/>
+
+        <objective type="EntityKill"><property name="objective_name_key" value="questBpForestChampion_obj_kill"/><property name="needed_count" value="1"/><property name="target_entity_class" value="AECTheDruidBoss"/><property name="nav_object" value="bpForestMarker"/><property name="phase" value="1"/></objective>
+
+        <reward type="Exp" value="50000"/>
+        <action type="GameEvent" id="eventBpMarkForestKilled"><property name="on_complete" value="true"/></action>
+    </quest>
+
+    <!-- ===== DESERT CHAMPION: Mykir ===== -->
+    <quest id="questBpDesertChampion">
+        <property name="name_key" value="questBpDesertChampion_name"/>
+        <property name="subtitle_key" value="questBpDesertChampion_subtitle"/>
+        <property name="description_key" value="questBpDesertChampion_description"/>
+        <property name="icon" value="ui_game_symbol_skull"/>
+        <property name="repeatable" value="false"/>
+        <property name="category_key" value="quest"/>
+        <property name="difficulty_tier" value="5"/>
+        <property name="offer_key" value="questBpDesertChampion_offer"/>
+        <property name="statement_key" value="questBpDesertChampion_statement"/>
+        <property name="response_key" value="questBpDesertChampion_response"/>
+        <property name="completiontype" value="AutoComplete"/>
+        <property name="completion_key" value="questBpDesertChampion_completion"/>
+
+        <objective type="EntityKill"><property name="objective_name_key" value="questBpDesertChampion_obj_kill"/><property name="needed_count" value="1"/><property name="target_entity_class" value="AECMykirBoss"/><property name="nav_object" value="bpDesertMarker"/><property name="phase" value="1"/></objective>
+
+        <reward type="Exp" value="50000"/>
+        <action type="GameEvent" id="eventBpMarkDesertKilled"><property name="on_complete" value="true"/></action>
+    </quest>
+
+    <!-- ===== SNOW CHAMPION: Electric Demon Runner ===== -->
+    <quest id="questBpSnowChampion">
+        <property name="name_key" value="questBpSnowChampion_name"/>
+        <property name="subtitle_key" value="questBpSnowChampion_subtitle"/>
+        <property name="description_key" value="questBpSnowChampion_description"/>
+        <property name="icon" value="ui_game_symbol_skull"/>
+        <property name="repeatable" value="false"/>
+        <property name="category_key" value="quest"/>
+        <property name="difficulty_tier" value="5"/>
+        <property name="offer_key" value="questBpSnowChampion_offer"/>
+        <property name="statement_key" value="questBpSnowChampion_statement"/>
+        <property name="response_key" value="questBpSnowChampion_response"/>
+        <property name="completiontype" value="AutoComplete"/>
+        <property name="completion_key" value="questBpSnowChampion_completion"/>
+
+        <objective type="EntityKill"><property name="objective_name_key" value="questBpSnowChampion_obj_kill"/><property name="needed_count" value="1"/><property name="target_entity_class" value="AECElectricDemonRunnerBoss"/><property name="nav_object" value="bpSnowMarker"/><property name="phase" value="1"/></objective>
+
+        <reward type="Exp" value="50000"/>
+        <action type="GameEvent" id="eventBpMarkSnowKilled"><property name="on_complete" value="true"/></action>
+    </quest>
+
+    <!-- ===== BURNT FOREST CHAMPION: Siren Head ===== -->
+    <quest id="questBpBurntChampion">
+        <property name="name_key" value="questBpBurntChampion_name"/>
+        <property name="subtitle_key" value="questBpBurntChampion_subtitle"/>
+        <property name="description_key" value="questBpBurntChampion_description"/>
+        <property name="icon" value="ui_game_symbol_skull"/>
+        <property name="repeatable" value="false"/>
+        <property name="category_key" value="quest"/>
+        <property name="difficulty_tier" value="5"/>
+        <property name="offer_key" value="questBpBurntChampion_offer"/>
+        <property name="statement_key" value="questBpBurntChampion_statement"/>
+        <property name="response_key" value="questBpBurntChampion_response"/>
+        <property name="completiontype" value="AutoComplete"/>
+        <property name="completion_key" value="questBpBurntChampion_completion"/>
+
+        <objective type="EntityKill"><property name="objective_name_key" value="questBpBurntChampion_obj_kill"/><property name="needed_count" value="1"/><property name="target_entity_class" value="AECSirenHeadBoss"/><property name="nav_object" value="bpBurntMarker"/><property name="phase" value="1"/></objective>
+
+        <reward type="Exp" value="50000"/>
+        <action type="GameEvent" id="eventBpMarkBurntKilled"><property name="on_complete" value="true"/></action>
+    </quest>
+
+    <!-- ===== WASTELAND CHAMPION: Doomlord ===== -->
+    <quest id="questBpWastelandChampion">
+        <property name="name_key" value="questBpWastelandChampion_name"/>
+        <property name="subtitle_key" value="questBpWastelandChampion_subtitle"/>
+        <property name="description_key" value="questBpWastelandChampion_description"/>
+        <property name="icon" value="ui_game_symbol_skull"/>
+        <property name="repeatable" value="false"/>
+        <property name="category_key" value="quest"/>
+        <property name="difficulty_tier" value="5"/>
+        <property name="offer_key" value="questBpWastelandChampion_offer"/>
+        <property name="statement_key" value="questBpWastelandChampion_statement"/>
+        <property name="response_key" value="questBpWastelandChampion_response"/>
+        <property name="completiontype" value="AutoComplete"/>
+        <property name="completion_key" value="questBpWastelandChampion_completion"/>
+
+        <objective type="EntityKill"><property name="objective_name_key" value="questBpWastelandChampion_obj_kill"/><property name="needed_count" value="1"/><property name="target_entity_class" value="AECDoomlordDemolishmanBoss"/><property name="nav_object" value="bpWastelandMarker"/><property name="phase" value="1"/></objective>
+
+        <reward type="Exp" value="50000"/>
+        <action type="GameEvent" id="eventBpMarkWastelandKilled"><property name="on_complete" value="true"/></action>
+    </quest>
+
+    <!-- ===== TRADER DEFENSE =====
+         Auto-given a nivel 50. El jugador va a un trader, activa el rally
+         point cerca, y defiende contra 3 oleadas de zombis. Repetible. -->
+    <quest id="questBpTraderDefense">
+        <property name="name_key" value="questBpTraderDefense_name"/>
+        <property name="subtitle_key" value="questBpTraderDefense_subtitle"/>
+        <property name="description_key" value="questBpTraderDefense_description"/>
+        <property name="icon" value="ui_game_symbol_quest"/>
+        <property name="repeatable" value="true"/>
+        <property name="category_key" value="quest"/>
+        <property name="difficulty_tier" value="4"/>
+        <property name="offer_key" value="questBpTraderDefense_offer"/>
+        <property name="statement_key" value="questBpTraderDefense_statement"/>
+        <property name="response_key" value="questBpTraderDefense_response"/>
+        <property name="completiontype" value="AutoComplete"/>
+        <property name="completion_key" value="questBpTraderDefense_completion"/>
+
+        <!-- Phase 1: ir al trader mas cercano -->
+        <objective type="Goto" id="trader" value="5" phase="1">
+            <property name="biome_filter_type" value="AnyBiome"/>
+            <property name="nav_object" value="go_to_trader"/>
+            <property name="allow_current_poi" value="true"/>
+        </objective>
+
+        <!-- Phase 2: rally point en el trader, lanza wave 1 -->
+        <objective type="RallyPoint" phase="2"><property name="nav_object" value="rally"/><property name="activate_event" value="eventBpTraderDefenseWave1"/></objective>
+
+        <!-- Phase 3: matar wave 1 (10 zombis) -->
+        <objective type="EntityKill"><property name="objective_name_key" value="questBpTraderDefense_obj_wave1"/><property name="needed_count" value="10"/><property name="target_tags" value="zombie"/><property name="phase" value="3"/></objective>
+
+        <!-- Phase 4: wait 20s antes de wave 2 -->
+        <objective type="Time"><property name="phase" value="4"/><property name="time" value="20"/></objective>
+        <action type="GameEvent" id="eventBpTraderDefenseWave2" phase="5"/>
+
+        <!-- Phase 5: matar wave 2 (15 zombis) -->
+        <objective type="EntityKill"><property name="objective_name_key" value="questBpTraderDefense_obj_wave2"/><property name="needed_count" value="15"/><property name="target_tags" value="zombie"/><property name="phase" value="5"/></objective>
+
+        <!-- Phase 6: wait 20s antes de wave 3 -->
+        <objective type="Time"><property name="phase" value="6"/><property name="time" value="20"/></objective>
+        <action type="GameEvent" id="eventBpTraderDefenseWave3" phase="7"/>
+
+        <!-- Phase 7: matar wave 3 (20 zombis + mini-boss) -->
+        <objective type="EntityKill"><property name="objective_name_key" value="questBpTraderDefense_obj_wave3"/><property name="needed_count" value="20"/><property name="target_tags" value="zombie"/><property name="phase" value="7"/></objective>
+
+        <reward type="Exp" value="75000"/>
+        <action type="GameEvent" id="eventBpTraderDefenseReward"><property name="on_complete" value="true"/></action>
+    </quest>
+
+
+    <!-- ===== FINAL BOSS: The Executioner =====
+         Auto-given by tracker buff cuando los 5 CVars = 1 -->
+    <quest id="questBpFinalBoss">
+        <property name="name_key" value="questBpFinalBoss_name"/>
+        <property name="subtitle_key" value="questBpFinalBoss_subtitle"/>
+        <property name="description_key" value="questBpFinalBoss_description"/>
+        <property name="icon" value="ui_game_symbol_skull"/>
+        <property name="repeatable" value="false"/>
+        <property name="category_key" value="quest"/>
+        <property name="difficulty_tier" value="5"/>
+        <property name=

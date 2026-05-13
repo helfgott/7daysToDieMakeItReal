@@ -1,0 +1,47 @@
+<config>
+	<!-- === AEC-AIO BOSS === -->
+
+<append xpath="/blocks">
+		<block name="aecQuestSignalLure">
+			<property name="CustomIcon" value="capChimney"/>
+			<property name="DescriptionKey" value="aecQuestSignalLureDesc"/>
+			<property name="Material" value="Mmetal_weak"/>
+			<property name="MaxDamage" value="15"/>
+			<property name="Shape" value="ModelEntity"/>
+			<property name="Model" value="@:Entities/Buildings/capChimneyLargeSmokePrefab.prefab"/>
+			<property name="DisplayType" value="blockHardened"/>
+			<property name="ImposterExchange" value="imposterDontBlockCTRPole" param1="87"/>
+			<property name="CustomIconTint" value="FF4500"/>
+			<property name="TintColor" value="FF4500"/>
+			<property name="WaterFlow" value="permitted"/>
+			<property name="EconomicValue" value="20"/>
+			<property name="Tags" value="aecQuestLureItem"/>
+			<property class="RepairItems">
+				<property name="resourceScrapIron" value="0"/>
+			</property>
+			<drop event="Harvest" name="resourceScrapIron" count="0" tag="allHarvest"/>
+			<drop event="Destroy" count="0"/>
+			<drop event="Fall" name="scrapMetalPile" count="1" prob="0" stick_chance="1"/>
+			<property name="SortOrder1" value="B650"/>
+			<property name="SortOrder2" value="0002"/>
+			<property name="Group" value="Building,advBuilding"/>
+		</block>
+
+		<block name="aecQuestRelay">
+			<property name="Extends" value="radioHam"/>
+			<property name="DescriptionKey" value="aecQuestRelayDesc"/>
+    		<property name="CustomIcon" value="radioHam"/>
+			<property name="Class" value="GameEvent"/>
+			<property name="ActivateEvent" value="eventAECQuestRelayActivate"/>
+			<property name="CustomIconTint" value="B22222"/>
+			<property name="TintColor" value="B22222"/>
+			<property name="Tags" value="radio,aecQuestRelay"/>
+			<property name="SortOrder1" value="B650"/>
+			<property name="SortOrder2" value="0003"/>
+			<property name="EconomicValue" value="250"/>
+			<property name="PickupTarget" value="aecQuestRelay"/>
+			<drop event="Destroy" name="aecQuestRelay" count="1" prob="1"/>
+			<property name="Group" value="Building,advBuilding"/>
+		</block>
+	</append>
+</config>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configs>
+<append xpath="/nav_object_classes">
+
+    <!--
+        Marcadores con todos los settings que vanilla espera:
+        inactive_map_settings, map_settings, inactive_compass_settings,
+        compass_settings, onscreen_settings.
+    -->
+
+    <nav_object_class name="bpForestMarker">
+        <inactive_map_settings>
+            <property name="sprite_name" value="ui_game_symbol_skull"/>
+            <property name="min_distance" value="0"/>
+            <property name="max_distance" value="-1"/>
+            <property name="color" value="50,150,50,255"/>
+            <property name="has_pulse" value="false"/>
+        </inactive_map_settings>
+        <map_settings>
+            <property name="sprite_name" value="ui_game_symbol_skull"/>
+            <property name="min_distance" value="0"/>
+            <property name="max_distance" value="-1"/>
+            <property name="color" value="50,220,50,255"/>
+            <property name="has_pulse" value="true"/>
+        </map_settings>
+        <inactive_compass_settings>
+            <property name="sprite_name" value="ui_game_symbol_skull"/>
+            <property name="min_distance" value="0"/>
+            <property name="max_distance" value="1024"/>
+            <property name="color" value="50,150,50,255"/>
+            <property name="has_pulse" value="false"/>
+            <property name="icon_clamped" value="false"/>
+        </inactive_compass_settings>
+        <compass_settings>
+            <property name="sprite_name" value="ui_game_symbol_skull"/>
+            <property name="min_distance" value="0"/>
+            <property name="max_scale_distance" value="1024"/>
+            <property name="color" value="50,220,50,255"/>
+            <property name="has_pulse" value="true"/>
+            <property name="icon_clamped" value="true"/>
+        </compass_settings>
+        <onscreen_settings>
+            <property name="sprite_name" value="ui_game_symbol_skull"/>
+            <property name="min_distance" value="0"/>
+            <property name="max_distance" value="-1"/>
+            <property name="color" value="50,220,50,255"/>
+            <property name="has_pulse" value="true"/>
+            <property name="text_type" value="Distance"/>
+            <property name="show_offscreen" value="true"/>
+        </onscreen_settings>
+    </nav_object_class>
+
+    <nav_object_class name="bpDesertMarker">
+        <inactive_map_settings>
+            <property name="sprite_name" value="ui_game_symbol_skull"/>
+            <property name="min_distance" value="0"/>
+            <property name="max_distance" value="-1"/>
+            <property name="color" value="180,130,40,255"/>
+            <property name="has_pulse" value="false"/>
+        </inactive_map_settings>
+        <map_settings>
+            <property name="sprite_name" value="ui_game_symbol_skull"/>
+            <property name="min_distance" value="0"/>
+            <property name="max_distance" value="-1"/>
+            <property name="color" value="224,160,48,255"/>
+            <property name="has_pulse" value="true"/>
+        </map_settings>
+        <inactive_compass_settings>
+            <property name="sprite_name" value="ui_game_symbol_skull"/>
+            <property name="min_distance" value="0"/>
+            <property name="max_distance" value="1024"/>
+            <property name="color" value="180,130,40,255"/>
+            <property name="has_pulse" value="false"/>
+            <property name="icon_clamped" value="false"/>
+        </inactive_compass_settings>
+        <compass_settings>
+            <property name="sprite_name" value="ui_game_symbol_skull"/>
+            <property name="min_distance" value="0"/>
+            <property name="max_scale_distance" value="1024"/>
+            <property name="color" value="224,160,48,255"/>
+            <property name="has_pulse" value="true"/>
+            <property name="icon_clamped" value="true"/>
+        </compass_settings>
+        <onscreen_settings>
+            <property name="sprite_name" value="ui_game_symbol_skull"/>
+            <property name="min_distance" value="0"/>
+            <property name="max_distance" value="-1"/>
+            <property name="color" value="224,160,48,255"/>
+            <property name="has_pulse" value="true"/>
+            <property name="text_type" value="Distance"/>
+            <property name="show_offscreen" value="true"/>
+        </onscreen_settings>
+    </nav_object_class>
+
+    <nav_object_class name="bpSnowMarker">
+        <inactive_map_settings>
+            <property name="sprite_name" value="ui_game_symbol_skull"/>
+            <property name="min_distance" value="0"/>
+            <property name="max_distance" value="-1"/>
+            <property name="color" value="100,160,200,255"/>
+            <property name="has_pulse" value="false"/>
+        </inactive_map_settings>
+        <map_settings>
+            <property name="sprite_name" value="ui_game_symbol_skull"/>
+            <property name="min_distance" value="0"/>
+            <property name="max_distance" value="-1"/>
+            <property name="color" value="128,204,255,255"/>
+            <property name="has_pulse" value="true"/>
+        </map_settings>
+        <inactive_compass_settings>
+            <property name="sprite_name" value="ui_game_symbol_skull"/>
+            <property name="min_distance" value="0"/>
+            <property name="max_distance" value="1024"/>
+            <property name="color" value="100,160,200,255"/>
+            <property name="has_pulse" valu

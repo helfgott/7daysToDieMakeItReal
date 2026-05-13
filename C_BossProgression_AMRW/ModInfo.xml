@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+    <Name value="C_BossProgression_AMRW" />
+    <DisplayName value="Boss Progression Campaign" />
+    <Version value="0.1.0" />
+    <Description value="An end-game campaign on top of AEC-AIO BOSS. Hunt and kill the 5 biome champions (one-time only), then face the Final Boss, then survive the endgame mega-horde. Requires AEC-AIO BOSS mod." />
+    <Author value="Miguel" />
+    <Website value="" />
+</xml>

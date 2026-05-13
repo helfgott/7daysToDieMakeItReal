@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configs>
+
+    <!--
+        Antiquities are added to common residential loot containers at low
+        probability. They don't replace existing loot, just sometimes show
+        up alongside it.
+        prob 0.5 = roughly 1-2% chance per container based on the lootgroup's
+        total weights in vanilla.
+    -->
+
+    <!-- Nightstands: rings, photos, letters, lockets (intimate items) -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupNightstand']">
+        <item name="antiqueWeddingRing"  prob="0.4"/>
+        <item name="antiqueFamilyPhoto"  prob="0.6"/>
+        <item name="antiqueOldLetter"    prob="0.6"/>
+        <item name="antiqueSilverLocket" prob="0.4"/>
+    </append>
+
+    <!-- Purses: coins, bills, photos -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupPurse']">
+        <item name="antiqueLuckyCoin"   prob="0.7"/>
+        <item name="antiquePreWarBill"  prob="0.5"/>
+        <item name="antiqueFamilyPhoto" prob="0.4"/>
+    </append>
+
+    <!-- Footlockers: diary, locket, letter -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupFootlocker']">
+        <item name="antiqueBurntDiary"   prob="0.5"/>
+        <item name="antiqueSilverLocket" prob="0.4"/>
+        <item name="antiqueOldLetter"    prob="0.5"/>
+    </append>
+
+    <!-- Desks: bills, diary, letter -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupDesks']">
+        <item name="antiquePreWarBill" prob="0.6"/>
+        <item name="antiqueOldLetter"  prob="0.6"/>
+        <item name="antiqueBurntDiary" prob="0.4"/>
+    </append>
+
+    <!-- Lockers: toys, photos -->
+    <append xpath="/lootcontainers/lootgroup[@name='groupLocker']">
+        <item name="antiqueChildToy"    prob="0.5"/>
+        <item name="antiqueFamilyPhoto" prob="0.5"/>
+    </append>
+
+</configs>

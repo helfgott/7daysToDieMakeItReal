@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configs>
+
+    <!--
+        Boss Hunter challenge category.
+        Aparece como una pestana propia en el menu de Challenges (junto a
+        Basics, Advanced, Biome Progression).
+        Cada boss kill cuenta como un challenge. Completar todos los 5 +
+        el final desbloquea la recompensa final del grupo.
+    -->
+
+    <!-- ===== CATEGORY ===== -->
+    <append xpath="/challenges">
+        <challenge_category name="BossHunter" title_key="challengeCategoryBossHunter" icon="ui_game_symbol_skull"/>
+    </append>
+
+    <!-- ===== GROUPS ===== -->
+    <append xpath="/challenges">
+        <challenge_group category="BossHunter" name="BiomeChampions"
+                         title_key="challengeGroupBiomeChampions"
+                         reward_text_key="challengeRewardBiomeChampions"
+                         reward_event="challenge_reward_5000"
+                         link_challenges="true"
+                         objective_text_key="challengeObjectiveBiomeChampions"/>
+
+        <challenge_group category="BossHunter" name="FinalBoss"
+                         title_key="challengeGroupFinalBoss"
+                         reward_text_key="challengeRewardFinalBoss"
+                         reward_event="challenge_reward_5000"
+                         hidden_by="BiomeChampions"/>
+    </append>
+
+    <!-- ===== INDIVIDUAL CHALLENGES ===== -->
+    <append xpath="/challenges">
+
+        <!-- 5 biome champions -->
+        <challenge name="bpChallengeForest"
+                   title_key="bpChallengeForest_title"
+                   icon="ui_game_symbol_skull"
+                   group="BiomeChampions"
+                   short_description_key="bpChallengeForest_short"
+                   description_key="bpChallengeForest_desc"
+                   reward_text_key="challenge_reward_500xp"
+                   reward_event="challenge_reward_500">
+            <objective type="Kill" entity_names="AECTheDruidBoss" count="1"/>
+        </challenge>
+
+        <challenge name="bpChallengeDesert"
+                   title_key="bpChallengeDesert_title"
+                   icon="ui_game_symbol_skull"
+                   group="BiomeChampions"
+                   short_description_key="bpChallengeDesert_short"
+                   description_key="bpChallengeDesert_desc"
+                   reward_text_key="challenge_reward_500xp"
+                   reward_event="challenge_reward_500">
+            <objective type="Kill" entity_names="AECMykirBoss" count="1"/>
+        </challenge>
+
+        <challenge name="bpChallengeSnow"
+                   title_key="bpChallengeSnow_title"
+                   icon="ui_game_symbol_skull"
+                   group="BiomeChampions"
+                   short_description_key="bpChallengeSnow_short"
+                   description_key="bpChallengeSnow_desc"
+                   reward_text_key="challenge_reward_500xp"
+                   reward_event="challenge_reward_500">
+            <objective type="Kill" entity_names="AECElectricDemonRunnerBoss" count="1"/>
+        </challenge>
+
+        <challenge name="bpChallengeBurnt"
+                   title_key="bpChallengeBurnt_title"
+                   icon="ui_game_symbol_skull"
+                   group="BiomeChampions"
+                   short_description_key="bpChallengeBurnt_short"
+                   description_key="bpChallengeBurnt_desc"
+                   reward_text_key="challenge_reward_500xp"
+                   reward_event="challenge_reward_500">
+            <objective type="Kill" entity_names="AECSirenHeadBoss" count="1"/>
+        </challenge>
+
+        <challenge name="bpChallengeWasteland"
+                   title_key="bpChallengeWasteland_title"
+                   icon="ui_game_symbol_skull"
+                   group="BiomeChampions"
+                   short_description_key="bpChallengeWasteland_short"
+                   description_key="bpChallengeWasteland_desc"
+                   reward_text_key="challenge_reward_500xp"
+                   reward_event="challenge_reward_500">
+            <objective type="Kill" entity_names="AECDoomlordDemolishmanBoss" count="1"/>
+        </challenge>
+
+        <!-- Final Boss -->
+        <challenge name="bpChallengeFinalBoss"
+                   title_key="bpChallengeFinalBoss_title"
+                   icon="ui_game_symbol_skull"
+                   group="FinalBoss"
+                   short_description_key="bpChallengeFinalBoss_short"
+                   description_key="bpChallengeFinalBoss_desc"
+                   reward_text_key="challenge_reward_5000xp"
+                   reward_event="challenge_reward_5000">
+            <objective type="Kill" entity_names="AECTheExecutionerBoss" count="1"/>
+        </challenge>
+
+    </append>
+
+</configs>

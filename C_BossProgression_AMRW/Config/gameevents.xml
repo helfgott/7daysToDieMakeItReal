@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configs>
+<append xpath="/gameevents">
+
+    <!-- ================================================================ -->
+    <!--  BIOME CHAMPION SPAWN EVENTS                                      -->
+    <!--  Each one spawns its boss once, near the player.                  -->
+    <!--  Used by quests as the "boss arrival" step.                       -->
+    <!-- ================================================================ -->
+
+    <action_sequence name="eventBpForestChampionArrival">
+        <action class="AddChatMessage">
+            <property name="text" value="| [00CC00]FOREST CHAMPION:[-] The Druid has emerged from the woods. Hunt it down."/>
+            <property name="text_key" value="eventBpForestArrival_msg"/>
+        </action>
+        <action class="SpawnEntity">
+            <property name="safe_spawn" value="true"/>
+            <property name="entity_names" value="AECTheDruidBoss"/>
+            <property name="spawn_count" value="1"/>
+            <property name="min_distance" value="15"/>
+            <property name="max_distance" value="30"/>
+            <property name="spawn_type" value="Position"/>
+            <property name="is_aggressive" value="true"/>
+        </action>
+        <action class="ModifyCVar">
+            <property name="cvar" value="$bpForestSpawned"/>
+            <property name="operation" value="set"/>
+            <property name="value" value="1"/>
+        </action>
+    </action_sequence>
+
+    <action_sequence name="eventBpDesertChampionArrival">
+        <action class="AddChatMessage">
+            <property name="text" value="| [E0A030]DESERT CHAMPION:[-] Mykir rises from the sands."/>
+            <property name="text_key" value="eventBpDesertArrival_msg"/>
+        </action>
+        <action class="SpawnEntity">
+            <property name="safe_spawn" value="true"/>
+            <property name="entity_names" value="AECMykirBoss"/>
+            <property name="spawn_count" value="1"/>
+            <property name="min_distance" value="15"/>
+            <property name="max_distance" value="30"/>
+            <property name="spawn_type" value="Position"/>
+            <property name="is_aggressive" value="true"/>
+        </action>
+        <action class="ModifyCVar">
+            <property name="cvar" value="$bpDesertSpawned"/>
+            <property name="operation" value="set"/>
+            <property name="value" value="1"/>
+        </action>
+    </action_sequence>
+
+    <action_sequence name="eventBpSnowChampionArrival">
+        <action class="AddChatMessage">
+            <property name="text" value="| [80CCFF]SNOW CHAMPION:[-] The Electric Demon Runner has appeared in the snow!"/>
+            <property name="text_key" value="eventBpSnowArrival_msg"/>
+        </action>
+        <action class="SpawnEntity">
+            <property name="safe_spawn" value="true"/>
+            <property name="entity_names" value="AECElectricDemonRunnerBoss"/>
+            <property name="spawn_count" value="1"/>
+            <property name="min_distance" value="15"/>
+            <property name="max_distance" value="30"/>
+            <property name="spawn_type" value="Position"/>
+            <property name="is_aggressive" value="true"/>
+        </action>
+        <action class="ModifyCVar">
+            <property name="cvar" value="$bpSnowSpawned"/>
+            <property name="operation" value="set"/>
+            <property name="value" value="1"/>
+        </action>
+    </action_sequence>
+
+    <action_sequence name="eventBpBurntChampionArrival">
+        <action class="AddChatMessage">
+            <property name="text" value="| [602020]BURNT CHAMPION:[-] Siren Head emerges from the ashes."/>
+            <property name="text_key" value="eventBpBurntArrival_msg"/>
+        </action>
+        <action class="SpawnEntity">
+            <property name="safe_spawn" value="true"/>
+            <property name="entity_names" value="AECSirenHeadBoss"/>
+            <property name="spawn_count" value="1"/>
+            <property name="min_distance" value="15"/>
+            <property name="max_distance" value="30"/>
+            <property name="spawn_type" value="Position"/>
+            <property name="is_aggressive" value="true"/>
+        </action>
+        <action class="ModifyCVar">
+            <property name="cvar" value="$bpBurntSpawned"/>
+            <property name="operation" value="set"/>
+            <property name="value" value="1"/>
+        </action>
+    </action_sequence>
+
+    <action_sequence name="eventBpWastelandChampionArrival">
+        <action class="AddChatMessage">
+            <property name="text" value="| [FF4500]WASTELAND CHAMPION:[-] Doomlord Demolishman descends upon the wasteland."/>
+            <property name="text_key" value="eventBpWastelandArrival_msg"/>
+        </action>
+        <action class="SpawnEntity">
+            <property name="safe_spawn" value="true"/>
+            <property name="entity_names" value="AECDoomlordDemolishmanBoss"/>
+            <property name="spawn_count" value="1"/>
+            <property name="min_distance" value="15"/>
+            <property name="max_distance" value="30"/>
+            <property name="spawn_type" value="Position"/>
+            <property name="is_aggressive" value="true"/>
+        </action>
+        <action class="ModifyCVar">
+            <property name="cvar" value="$bpWastelandSpawned"/>
+            <property name="operation" value="set"/>
+            <property name="value" value="1"/>
+        </action>
+    </action_sequence>
+
+    <action_sequence name="eventBpFinalBossArrival">
+        <action class="AddChatMessage">
+            <property name="text" value="| [FF0000]FINAL BOSS:[-] The Executioner has come for you. There is no escape."/>
+            <property name="text_key" value="eventBpFinalArrival_msg"/>
+        </action>
+        <action class="SpawnEntity">
+            <property name="safe_spawn" value="true"/>
+            <property name="entity_names" value="AECTheExecutionerBoss"/>
+            <property name="spawn_count" value="1"/>
+            <property name="min_distance" value="15"/>
+            <property name="max_distance" value="30"/>
+            <property name="spawn_type" value="Position"/>
+            <property name="is_aggressive" value="true"/>
+        </action>
+        <action class="ModifyCVar">
+            <property name="cvar" value="$bpFinalSpawned"/>
+            <property name="operation" value="set"/>
+            <property name="value" value="1"/>
+        </action>
+    </action_sequence>
+
+
+    <!-- ================================================================ -->
+    <!--  KILL MARKER EVENTS                                               -->
+    <!--  Quests on_complete dispara estos. Aplican el buff marcador       -->
+    <!--  que setea la CVar correspondiente.                               -->
+    <!-- ================================================================ -->
+
+    <action_sequence name="eventBpMarkForestKilled">
+        <action class="AddEntitiesToGroup">
+            <property name="entity_tags" value="player"/>
+            <property name="group_name" value="bpNearbyPlayers"/>
+            <property name="exclude_target" value="false"/>
+            <property name="max_distance" value="50"/>
+        </action>
+        <action class="AddChatMessage">
+            <property name="text" value="| [00CC00]Forest Champion defeated.[-] (1/5)"/>
+            <property name="target_group" value="bpNearbyPlayers"/>
+        </action>
+        <action class="AddBuff">
+            <property name="buff_name" value="bpForestKilled"/>
+            <property name="target_group" value="bpNearbyPlayers"/>
+        </action>
+    </action_sequence>
+
+    <action_sequence name="eventBpMarkDesertKilled">
+        <action class="AddEntitiesToGroup">
+            <property name="en

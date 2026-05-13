@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+    <Name value="AMoreRealisticWorld" />
+    <DisplayName value="A More Realistic World" />
+    <Version value="1.1.0" />
+    <Description value="Make every playthrough feel different. On first spawn, your character is assigned one random handicap (e.g. Asthma, Vertigo, Bad Back) and one positive trait (e.g. Iron Lungs, Sprinter, Strong) that persist for life. Inspired by Project Zomboid's trait system. The buff is guaranteed to not be the direct opposite of the handicap, so the effects never cancel each other out." />
+    <Author value="Miguel" />
+    <Website value="" />
+</xml>

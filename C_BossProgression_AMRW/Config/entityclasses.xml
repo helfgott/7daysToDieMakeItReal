@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configs>
+
+    <!--
+        Al entrar al juego, el jugador recibe dos buffs:
+        - bpQuestOffer: ofrece las 5 quests cuando alcance nivel 30
+        - bpProgressionTracker: monitorea progreso y ofrece la final quest
+                                cuando los 5 esten muertos
+        Ambos se aplican una sola vez (con check para no duplicar).
+    -->
+
+    <append xpath="/entity_classes/entity_class[@name='playerMale']">
+        <effect_group name="BossProgressionHookMale">
+            <triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="bpQuestOffer" target="self">
+                <requirement name="CVarCompare" cvar="$bpQuestsOffered" operation="Equals" value="0"/>
+            </triggered_effect>
+            <triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="bpProgressionTracker" target="self">
+                <requirement name="CVarCompare" cvar="$bpTrackerActive" operation="Equals" value="0"/>
+            </triggered_effect>
+            <!-- Recovery al cargar el save: refund siempre si Spawned=1 y Killed=0 -->
+            <triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="bpSessionRecovery" target="self"/>
+            <!-- Recovery al respawnear: refund solo si NO hay otros jugadores en 100m (MP-friendly) -->
+            <triggered_effect trigger="onSelfRespawn" action="AddBuff" buff="bpRespawnRecovery" target="self"/>
+        </effect_group>
+    </append>
+
+    <append xpath="/entity_classes/entity_class[@name='playerFemale']">
+        <effect_group name="BossProgressionHookFemale">
+            <triggered_effect trigger="onSelfEnteredGame" action="AddBuff" buff="bpQuestOffer" target="self">
+                <

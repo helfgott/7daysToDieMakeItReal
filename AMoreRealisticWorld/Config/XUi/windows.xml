@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configs>
+
+    <!-- ================================================================ -->
+    <!--  ALWAYS SHOW ENEMY HEALTH BARS                                    -->
+    <!--  Cambia el target bar (la barra que aparece arriba del centro    -->
+    <!--  cuando apuntas a un enemigo) de visibility="godmode" a "always"  -->
+    <!--  para que se vea siempre que apuntes a un enemigo, sin requerir   -->
+    <!--  godmode ni golpe previo.                                         -->
+    <!-- ================================================================ -->
+
+    <setattribute xpath="/windows/window[@name='windowTargetBar']" name="visibility">always</setattribute>
+
+</configs>

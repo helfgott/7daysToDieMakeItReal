@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configs>
+<append xpath="/items">
+
+    <!--
+        BOSS BEACONS
+        Item consumible. Al usar (Eat-style), aplica un buff que dispara
+        el gameevent de spawn del boss correspondiente.
+        Reusan icono de items existentes (CustomIcon + CustomIconTint).
+    -->
+
+    <item name="itemBpBeaconForest">
+        <property name="Tags" value="bossBeacon"/>
+        <property name="DisplayType" value="Default"/>
+        <property name="HoldType" value="16"/>
+        <property name="Meshfile" value="@:Other/Items/Health/pillBottlePrefab.prefab"/>
+        <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+        <property name="Material" value="Morganic"/>
+        <property name="CustomIcon" value="resourceScrapBrass"/>
+        <property name="CustomIconTint" value="50,220,50"/>
+        <property name="EconomicValue" value="10000"/>
+        <property name="Stacknumber" value="5"/>
+        <property name="Group" value="Tools"/>
+        <property class="Action0">
+            <property name="Class" value="Eat"/>
+            <property name="Delay" value="3.0"/>
+            <property name="Sound_start" value="UseActions/use_signalflare_inplace"/>
+        </property>
+        <effect_group tiered="false">
+            <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="bpBeaconForestActivated"/>
+        </effect_group>
+    </item>
+
+    <item name="itemBpBeaconDesert">
+        <property name="Tags" value="bossBeacon"/>
+        <property name="DisplayType" value="Default"/>
+        <property name="HoldType" value="16"/>
+        <property name="Meshfile" value="@:Other/Items/Health/pillBottlePrefab.prefab"/>
+        <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+        <property name="Material" value="Morganic"/>
+        <property name="CustomIcon" value="resourceScrapBrass"/>
+        <property name="CustomIconTint" value="224,160,48"/>
+        <property name="EconomicValue" value="10000"/>
+        <property name="Stacknumber" value="5"/>
+        <property name="Group" value="Tools"/>
+        <property class="Action0">
+            <property name="Class" value="Eat"/>
+            <property name="Delay" value="3.0"/>
+            <property name="Sound_start" value="UseActions/use_signalflare_inplace"/>
+        </property>
+        <effect_group tiered="false">
+            <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="bpBeaconDesertActivated"/>
+        </effect_group>
+    </item>
+
+    <item name="itemBpBeaconSnow">
+        <property name="Tags" value="bossBeacon"/>
+        <property name="DisplayType" value="Default"/>
+        <property name="HoldType" value="16"/>
+        <property name="Meshfile" value="@:Other/Items/Health/pillBottlePrefab.prefab"/>
+        <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+        <property name="Material" value="Morganic"/>
+        <property name="CustomIcon" value="resourceScrapBrass"/>
+        <property name="CustomIconTint" value="128,204,255"/>
+        <property name="EconomicValue" value="10000"/>
+        <property name="Stacknumber" value="5"/>
+        <property name="Group" value="Tools"/>
+        <property class="Action0">
+            <property name="Class" value="Eat"/>
+            <property name="Delay" value="3.0"/>
+            <property name="Sound_start" value="UseActions/use_signalflare_inplace"/>
+        </property>
+        <effect_group tiered="false">
+            <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="bpBeaconSnowActivated"/>
+        </effect_group>
+    </item>
+
+    <item name="itemBpBeaconBurnt">
+        <property name="Tags" value="bossBeacon"/>
+        <property name="DisplayType" value="Default"/>
+        <property name="HoldType" value="16"/>
+        <property name="Meshfile" value="@:Other/Items/Health/pillBottlePrefab.prefab"/>
+        <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+        <property name="Material" value="Morganic"/>
+        <property name="CustomIcon" value="resourceScrapBrass"/>
+        <property name="CustomIconTint" value="160,80,40"/>
+        <property name="EconomicValue" value="10000"/>
+        <property name="Stacknumber" value="5"/>
+        <property name="Group" value="Tools"/>
+        <property class="Action0">
+            <property name="Class" value="Eat"/>
+            <property name="Delay" value="3.0"/>
+            <property name="Sound_start" value="UseActions/use_signalflare_inplace"/>
+        </property>
+        <effect_group tiered="false">
+            <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="bpBeaconBurntActivated"/>
+        </effect_group>
+    </item>
+
+    <item name="itemBpBeaconWasteland">
+        <property name="Tags" value="bossBeacon"/>
+        <property name="DisplayType" value="Default"/>
+        <property name="HoldType" value="16"/>
+        <property name="Meshfile" value="@:Other/Items/Health/pillBottlePrefab.prefab"/>
+        <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+        <property name="Material" value="Morganic"/>
+        <property name="CustomIcon" value="resourceScrapBrass"/>
+        <property name="CustomIconTint" value="255,69,0"/>
+        <property name="EconomicValue" value="10000"/>
+        <property name="Stacknumber" value="5"/>
+        <property name="Group" value="Tools"/>
+        <property class="Action0">
+            <property name="Class" value="Eat"/>
+            <property name="Delay" value="3.0"/>
+            <property name="Sound_start" value="UseActions/use_signalflare_inplace"/>
+        </property>
+        <effect_group tiered="false">
+            <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="bpBeaconWastelandActivated"/>
+        </effect_group>
+    </item>
+
+    <item name="itemBpBeaconFinal">
+        <property name="Tags" value="bossBeacon"/>
+        <property name="DisplayType" value="Default"/>
+        <property name="HoldType" value="16"/>
+        <property name="Meshfile" value="@:Other/Items/Health/pillBottlePrefab.prefab"/>
+        <property name="DropMeshfile" value="@:Other/Items/Misc/sack_droppedPrefab.prefab"/>
+        <property name="Material" value="Morganic"/>
+        <property name="CustomIcon" value="resourceScrapBrass"/>
+        <property name="CustomIconTint" value="255,0,0"/>
+        <property name="EconomicValue" value="50000"/>
+        <property name="Stacknumber" value="5"/>
+        <property name="Group" value="Tools"/>
+        <property class="Action0">
+            <property name="Class" value="Eat"/>
+            <property name="Delay" value="5.0"/>
+            <property name="Sound_start" value="UseActions/use_signalflare_inplace"/>
+        </property>
+        <effect_group tiered="false">
+            <triggered_effect trigger="onSelfPrimaryActionEnd" action="AddBuff" buff="bpBeaconFinalActivated"/>
+        </effect_group>
+    </item>
+
+</append>
+</configs>

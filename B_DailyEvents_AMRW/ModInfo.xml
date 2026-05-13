@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+    <Name value="B_DailyEvents_AMRW" />
+    <DisplayName value="Daily Events &amp; Antiquities" />
+    <Version value="1.0.0" />
+    <Description value="Companion to A More Realistic World. Adds three things: (1) Daily Mood — every game day you get a random small blessing or curse that lasts that day. (2) Faster trader rotation — traders refresh stock every day instead of every 3 days. (3) Antiquity items — rare lore drops (wedding ring, family photo, burnt diary) found in loot, worth good dukes." />
+    <Author value="Miguel" />
+    <Website value="" />
+</xml>
