@@ -17,93 +17,6 @@
     <!--  efecto se aplica, bloqueando todos los slots siguientes.         -->
     <!-- ================================================================ -->
 
-    <!-- ================================================================ -->
-    <!--  FORCE FULL RESET                                                 -->
-    <!--  Buff utilitario para testing. Aplicar manualmente desde consola: -->
-    <!--    buff add rtForceFullReset                                      -->
-    <!--  Limpia todos los buffs y CVars de los 3 mods y re-rolea.        -->
-    <!-- ================================================================ -->
-    <buff name="rtForceFullReset" hidden="true">
-        <stack_type value="ignore"/>
-        <duration value=".5"/>
-        <effect_group>
-            <!-- Reset CVars de AMoreRealisticWorld -->
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtRolled" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHandicapDone" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBuffDone" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHandicapId" operation="set" value="0"/>
-
-            <!-- Reset CVars de tiradas (sticky) -->
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll1"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll2"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll3"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll4"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll5"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll6"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll7"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll8"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll9"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll10" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll11" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll12" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll13" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll14" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll1"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll2"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll3"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll4"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll5"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll6"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll7"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll8"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll9"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll10" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll11" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll12" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll13" operation="set" value="0"/>
-
-            <!-- Remove handicaps existentes -->
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="handicapSensibilidad"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="handicapAsma"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="handicapDebil"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="handicapTortuga"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="handicapGoloso"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="handicapBebedor"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="handicapFriolento"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="handicapPielSensible"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="handicapInmuneDebil"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="handicapSangreLigera"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="handicapManazas"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="handicapEspaldaDebil"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="handicapMenteDispersa"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="handicapPesimoNegociador"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="handicapVertigo"/>
-
-            <!-- Remove buffs positivos existentes -->
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffPulmonesDeAcero"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffEstomagoDeHierro"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffFuerte"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffVelocista"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffMetabolismoLento"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffCamello"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffSangreFria"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffDefensasFuertes"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffCoagulacionRapida"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffManosHabiles"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffEspaldaFuerte"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffMenteDespierta"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffCarismatico"/>
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="buffEquilibrio"/>
-
-            <!-- Remover el trait roller para forzar re-aplicacion limpia -->
-            <triggered_effect trigger="onSelfBuffStart" action="RemoveBuff" buff="realisticTraitRoller"/>
-
-            <!-- Re-trigger el roller despues del reset (fresh onSelfBuffStart) -->
-            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="realisticTraitRoller" target="self"/>
-        </effect_group>
-    </buff>
-
-
     <buff name="realisticTraitRoller" hidden="true" remove_on_death="false">
         <stack_type value="ignore"/>
         <duration value="0"/>
@@ -114,37 +27,6 @@
             <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHandicapDone" operation="set" value="0"/>
             <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBuffDone"     operation="set" value="0"/>
             <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHandicapId"   operation="set" value="0"/>
-
-            <!-- IMPORTANTE: resetear todas las CVars de tirada a 0 ANTES de capturar.
-                 Sin esto, los valores de runs previos quedan sticky y el cascade
-                 termina favoreciendo el mismo handicap/buff cada re-roll. -->
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll1"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll2"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll3"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll4"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll5"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll6"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll7"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll8"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll9"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll10" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll11" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll12" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll13" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll14" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll1"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll2"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll3"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll4"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll5"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll6"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll7"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll8"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll9"  operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll10" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll11" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll12" operation="set" value="0"/>
-            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBRoll13" operation="set" value="0"/>
 
             <!-- PASO 1: capturar tiradas en CVars -->
             <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHRoll1" operation="set" value="1">
@@ -648,4 +530,342 @@
     </buff>
 
     <buff name="handicapSangreLigera" name_key="handicapSangreLigeraName" description_key="handicapSangreLigeraDesc" tooltip_key="handicapSangreLigeraName" icon="ui_game_symbol_laceration" icon_color="200,100,100" remove_on_death="false">
-        <stack_type v
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHandicapDone" operation="set" value="1"/>
+            <passive_effect name="BuffResistance" operation="base_add" value="-.075" tags="buffInjuryBleeding,buffInjuryBleedingOne,buffInjuryBleedingTwo"/>
+        </effect_group>
+    </buff>
+
+    <buff name="handicapManazas" name_key="handicapManazasName" description_key="handicapManazasDesc" tooltip_key="handicapManazasName" icon="ui_game_symbol_hammer" icon_color="200,100,100" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHandicapDone" operation="set" value="1"/>
+            <passive_effect name="CraftingTier" operation="perc_add" value="-.04"/>
+        </effect_group>
+    </buff>
+
+    <buff name="handicapEspaldaDebil" name_key="handicapEspaldaDebilName" description_key="handicapEspaldaDebilDesc" tooltip_key="handicapEspaldaDebilName" icon="ui_game_symbol_fatigued" icon_color="200,100,100" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHandicapDone" operation="set" value="1"/>
+            <passive_effect name="StaminaChangeOT" operation="perc_add" value="-.04"/>
+        </effect_group>
+    </buff>
+
+    <buff name="handicapMenteDispersa" name_key="handicapMenteDispersaName" description_key="handicapMenteDispersaDesc" tooltip_key="handicapMenteDispersaName" icon="ui_game_symbol_bookworm" icon_color="200,100,100" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHandicapDone" operation="set" value="1"/>
+            <passive_effect name="ExperienceGain" operation="perc_add" value="-.04"/>
+        </effect_group>
+    </buff>
+
+    <buff name="handicapPesimoNegociador" name_key="handicapPesimoNegociadorName" description_key="handicapPesimoNegociadorDesc" tooltip_key="handicapPesimoNegociadorName" icon="ui_game_symbol_barter" icon_color="200,100,100" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHandicapDone" operation="set" value="1"/>
+            <passive_effect name="BarteringSelling" operation="base_add" value="-.04"/>
+        </effect_group>
+    </buff>
+
+    <buff name="handicapVertigo" name_key="handicapVertigoName" description_key="handicapVertigoDesc" tooltip_key="handicapVertigoName" icon="ui_game_symbol_concussion" icon_color="200,100,100" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtHandicapDone" operation="set" value="1"/>
+            <passive_effect name="Mobility" operation="perc_add" value="-.15"/>
+        </effect_group>
+    </buff>
+
+
+
+    <!-- ================================================================ -->
+    <!--  BUFFS POSITIVOS (15) - cada uno marca $rtBuffDone=1 al aplicarse -->
+    <!-- ================================================================ -->
+
+    <buff name="buffPulmonesDeAcero" name_key="buffPulmonesDeAceroName" description_key="buffPulmonesDeAceroDesc" tooltip_key="buffPulmonesDeAceroName" icon="ui_game_symbol_run" icon_color="100,200,100" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBuffDone" operation="set" value="1"/>
+            <passive_effect name="StaminaMax" operation="perc_add" value=".04"/>
+        </effect_group>
+    </buff>
+
+    <buff name="buffEstomagoDeHierro" name_key="buffEstomagoDeHierroName" description_key="buffEstomagoDeHierroDesc" tooltip_key="buffEstomagoDeHierroName" icon="ui_game_symbol_stomach" icon_color="100,200,100" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBuffDone" operation="set" value="1"/>
+            <passive_effect name="BuffResistance" operation="base_add" value=".06" tags="buffDysenteryCatchFood,buffDysenteryCatchDrink"/>
+        </effect_group>
+    </buff>
+
+    <buff name="buffFuerte" name_key="buffFuerteName" description_key="buffFuerteDesc" tooltip_key="buffFuerteName" icon="ui_game_symbol_melee" icon_color="100,200,100" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBuffDone" operation="set" value="1"/>
+            <passive_effect name="EntityDamage" operation="perc_add" value=".04" tags="melee"/>
+        </effect_group>
+    </buff>
+
+    <buff name="buffVelocista" name_key="buffVelocistaName" description_key="buffVelocistaDesc" tooltip_key="buffVelocistaName" icon="ui_game_symbol_run" icon_color="100,200,100" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBuffDone" operation="set" value="1"/>
+            <passive_effect name="RunSpeed" operation="perc_add" value=".04"/>
+        </effect_group>
+    </buff>
+
+    <buff name="buffMetabolismoLento" name_key="buffMetabolismoLentoName" description_key="buffMetabolismoLentoDesc" tooltip_key="buffMetabolismoLentoName" icon="ui_game_symbol_stomach" icon_color="100,200,100" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBuffDone" operation="set" value="1"/>
+            <passive_effect name="FoodMax" operation="perc_add" value=".04"/>
+        </effect_group>
+    </buff>
+
+    <buff name="buffCamello" name_key="buffCamelloName" description_key="buffCamelloDesc" tooltip_key="buffCamelloName" icon="ui_game_symbol_water" icon_color="100,200,100" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBuffDone" operation="set" value="1"/>
+            <passive_effect name="WaterMax" operation="perc_add" value=".04"/>
+        </effect_group>
+    </buff>
+
+    <buff name="buffSangreFria" name_key="buffSangreFriaName" description_key="buffSangreFriaDesc" tooltip_key="buffSangreFriaName" icon="ui_game_symbol_cold" icon_color="100,200,100" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBuffDone" operation="set" value="1"/>
+            <passive_effect name="HypothermalResist" operation="base_add" value="15"/>
+            <passive_effect name="HyperthermalResist" operation="base_add" value="15"/>
+        </effect_group>
+    </buff>
+
+    <buff name="buffDefensasFuertes" name_key="buffDefensasFuertesName" description_key="buffDefensasFuertesDesc" tooltip_key="buffDefensasFuertesName" icon="ui_game_symbol_infection_immunity" icon_color="100,200,100" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBuffDone" operation="set" value="1"/>
+            <passive_effect name="BuffResistance" operation="base_add" value=".075" tags="buffInfection01,buffInfection02,buffInfection03,buffInfection04"/>
+        </effect_group>
+    </buff>
+
+    <buff name="buffCoagulacionRapida" name_key="buffCoagulacionRapidaName" description_key="buffCoagulacionRapidaDesc" tooltip_key="buffCoagulacionRapidaName" icon="ui_game_symbol_infection_better" icon_color="100,200,100" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBuffDone" operation="set" value="1"/>
+            <passive_effect name="BuffResistance" operation="base_add" value=".075" tags="buffInjuryBleeding,buffInjuryBleedingOne,buffInjuryBleedingTwo"/>
+        </effect_group>
+    </buff>
+
+    <buff name="buffManosHabiles" name_key="buffManosHabilesName" description_key="buffManosHabilesDesc" tooltip_key="buffManosHabilesName" icon="ui_game_symbol_hammer" icon_color="100,200,100" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBuffDone" operation="set" value="1"/>
+            <passive_effect name="CraftingTier" operation="perc_add" value=".04"/>
+        </effect_group>
+    </buff>
+
+    <buff name="buffEspaldaFuerte" name_key="buffEspaldaFuerteName" description_key="buffEspaldaFuerteDesc" tooltip_key="buffEspaldaFuerteName" icon="ui_game_symbol_pack_mule" icon_color="100,200,100" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBuffDone" operation="set" value="1"/>
+            <passive_effect name="StaminaChangeOT" operation="perc_add" value=".04"/>
+        </effect_group>
+    </buff>
+
+    <buff name="buffMenteDespierta" name_key="buffMenteDespiertaName" description_key="buffMenteDespiertaDesc" tooltip_key="buffMenteDespiertaName" icon="ui_game_symbol_lightbulb" icon_color="100,200,100" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBuffDone" operation="set" value="1"/>
+            <passive_effect name="ExperienceGain" operation="perc_add" value=".04"/>
+        </effect_group>
+    </buff>
+
+    <buff name="buffCarismatico" name_key="buffCarismaticoName" description_key="buffCarismaticoDesc" tooltip_key="buffCarismaticoName" icon="ui_game_symbol_barter" icon_color="100,200,100" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBuffDone" operation="set" value="1"/>
+            <passive_effect name="BarteringSelling" operation="base_add" value=".04"/>
+        </effect_group>
+    </buff>
+
+    <buff name="buffEquilibrio" name_key="buffEquilibrioName" description_key="buffEquilibrioDesc" tooltip_key="buffEquilibrioName" icon="ui_game_symbol_parkour" icon_color="100,200,100" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value="0"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$rtBuffDone" operation="set" value="1"/>
+            <passive_effect name="Mobility" operation="perc_add" value=".15"/>
+        </effect_group>
+    </buff>
+
+
+    <!-- ================================================================ -->
+    <!--  DAILY MOOD SYSTEM                                                -->
+    <!--  Cada game day, un mood (bendicion o maldicion) se rolea.         -->
+    <!--  6 bendiciones + 6 maldiciones = 12 outcomes, uniforme 1/12.      -->
+    <!--  Al expirar, dispara dailyMoodRoller de nuevo (ciclo permanente). -->
+    <!-- ================================================================ -->
+
+    <buff name="dailyMoodRoller" hidden="true" remove_on_death="false">
+        <stack_type value="ignore"/>
+        <duration value=".1"/>
+        <effect_group>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmDone" operation="set" value="0"/>
+
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmRoll1"  operation="set" value="1"><requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LT" value="8"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmRoll2"  operation="set" value="1"><requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LT" value="9"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmRoll3"  operation="set" value="1"><requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LT" value="10"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmRoll4"  operation="set" value="1"><requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LT" value="11"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmRoll5"  operation="set" value="1"><requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LT" value="13"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmRoll6"  operation="set" value="1"><requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LT" value="14"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmRoll7"  operation="set" value="1"><requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LT" value="17"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmRoll8"  operation="set" value="1"><requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LT" value="20"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmRoll9"  operation="set" value="1"><requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LT" value="25"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmRoll10" operation="set" value="1"><requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LT" value="33"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmRoll11" operation="set" value="1"><requirement name="RandomRoll" seed_type="Random" min_max="0,100" operation="LT" value="50"/></triggered_effect>
+
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="moodLucky" target="self"><requirement name="CVarCompare" cvar="$dmRoll1" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmDone" operation="set" value="1"><requirement name="CVarCompare" cvar="$dmRoll1" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="moodEnergetic" target="self"><requirement name="CVarCompare" cvar="$dmRoll2" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmDone" operation="set" value="1"><requirement name="CVarCompare" cvar="$dmRoll2" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="moodFocused" target="self"><requirement name="CVarCompare" cvar="$dmRoll3" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmDone" operation="set" value="1"><requirement name="CVarCompare" cvar="$dmRoll3" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="moodSatiated" target="self"><requirement name="CVarCompare" cvar="$dmRoll4" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmDone" operation="set" value="1"><requirement name="CVarCompare" cvar="$dmRoll4" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="moodInspired" target="self"><requirement name="CVarCompare" cvar="$dmRoll5" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmDone" operation="set" value="1"><requirement name="CVarCompare" cvar="$dmRoll5" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="moodWarmth" target="self"><requirement name="CVarCompare" cvar="$dmRoll6" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmDone" operation="set" value="1"><requirement name="CVarCompare" cvar="$dmRoll6" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="moodUnlucky" target="self"><requirement name="CVarCompare" cvar="$dmRoll7" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmDone" operation="set" value="1"><requirement name="CVarCompare" cvar="$dmRoll7" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="moodSluggish" target="self"><requirement name="CVarCompare" cvar="$dmRoll8" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmDone" operation="set" value="1"><requirement name="CVarCompare" cvar="$dmRoll8" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="moodDistracted" target="self"><requirement name="CVarCompare" cvar="$dmRoll9" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmDone" operation="set" value="1"><requirement name="CVarCompare" cvar="$dmRoll9" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="moodHungry" target="self"><requirement name="CVarCompare" cvar="$dmRoll10" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmDone" operation="set" value="1"><requirement name="CVarCompare" cvar="$dmRoll10" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="moodGloomy" target="self"><requirement name="CVarCompare" cvar="$dmRoll11" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmDone" operation="set" value="1"><requirement name="CVarCompare" cvar="$dmRoll11" operation="Equals" value="1"/><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="AddBuff" buff="moodCold" target="self"><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+            <triggered_effect trigger="onSelfBuffStart" action="ModifyCVar" cvar="$dmDone" operation="set" value="1"><requirement name="CVarCompare" cvar="$dmDone" operation="Equals" value="0"/></triggered_effect>
+        </effect_group>
+    </buff>
+
+    <buff name="moodLucky" name_key="moodLuckyName" description_key="moodLuckyDesc" tooltip_key="moodLuckyName" icon="ui_game_symbol_treasure" icon_color="100,220,255" remove_on_death="false">
+        <stack_type value="ignore"/><duration value="3000"/>
+        <effect_group>
+            <passive_effect name="LootDropProb" operation="perc_add" value=".10"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="dailyMoodRoller" target="self"/>
+        </effect_group>
+    </buff>
+
+    <buff name="moodEnergetic" name_key="moodEnergeticName" description_key="moodEnergeticDesc" tooltip_key="moodEnergeticName" icon="ui_game_symbol_run" icon_color="100,220,255" remove_on_death="false">
+        <stack_type value="ignore"/><duration value="3000"/>
+        <effect_group>
+            <passive_effect name="StaminaChangeOT" operation="perc_add" value=".10"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="dailyMoodRoller" target="self"/>
+        </effect_group>
+    </buff>
+
+    <buff name="moodFocused" name_key="moodFocusedName" description_key="moodFocusedDesc" tooltip_key="moodFocusedName" icon="ui_game_symbol_lightbulb" icon_color="100,220,255" remove_on_death="false">
+        <stack_type value="ignore"/><duration value="3000"/>
+        <effect_group>
+            <passive_effect name="ExperienceGain" operation="perc_add" value=".10"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="dailyMoodRoller" target="self"/>
+        </effect_group>
+    </buff>
+
+    <buff name="moodSatiated" name_key="moodSatiatedName" description_key="moodSatiatedDesc" tooltip_key="moodSatiatedName" icon="ui_game_symbol_stomach" icon_color="100,220,255" remove_on_death="false">
+        <stack_type value="ignore"/><duration value="3000"/>
+        <effect_group>
+            <passive_effect name="FoodMax" operation="perc_add" value=".10"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="dailyMoodRoller" target="self"/>
+        </effect_group>
+    </buff>
+
+    <buff name="moodInspired" name_key="moodInspiredName" description_key="moodInspiredDesc" tooltip_key="moodInspiredName" icon="ui_game_symbol_hammer" icon_color="100,220,255" remove_on_death="false">
+        <stack_type value="ignore"/><duration value="3000"/>
+        <effect_group>
+            <passive_effect name="CraftingTier" operation="perc_add" value=".10"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="dailyMoodRoller" target="self"/>
+        </effect_group>
+    </buff>
+
+    <buff name="moodWarmth" name_key="moodWarmthName" description_key="moodWarmthDesc" tooltip_key="moodWarmthName" icon="ui_game_symbol_hot" icon_color="100,220,255" remove_on_death="false">
+        <stack_type value="ignore"/><duration value="3000"/>
+        <effect_group>
+            <passive_effect name="HypothermalResist" operation="base_add" value="10"/>
+            <passive_effect name="HyperthermalResist" operation="base_add" value="10"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="dailyMoodRoller" target="self"/>
+        </effect_group>
+    </buff>
+
+    <buff name="moodUnlucky" name_key="moodUnluckyName" description_key="moodUnluckyDesc" tooltip_key="moodUnluckyName" icon="ui_game_symbol_treasure" icon_color="200,100,100" remove_on_death="false">
+        <stack_type value="ignore"/><duration value="3000"/>
+        <effect_group>
+            <passive_effect name="LootDropProb" operation="perc_add" value="-.10"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="dailyMoodRoller" target="self"/>
+        </effect_group>
+    </buff>
+
+    <buff name="moodSluggish" name_key="moodSluggishName" description_key="moodSluggishDesc" tooltip_key="moodSluggishName" icon="ui_game_symbol_fatigued" icon_color="200,100,100" remove_on_death="false">
+        <stack_type value="ignore"/><duration value="3000"/>
+        <effect_group>
+            <passive_effect name="RunSpeed" operation="perc_add" value="-.05"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="dailyMoodRoller" target="self"/>
+        </effect_group>
+    </buff>
+
+    <buff name="moodDistracted" name_key="moodDistractedName" description_key="moodDistractedDesc" tooltip_key="moodDistractedName" icon="ui_game_symbol_bookworm" icon_color="200,100,100" remove_on_death="false">
+        <stack_type value="ignore"/><duration value="3000"/>
+        <effect_group>
+            <passive_effect name="ExperienceGain" operation="perc_add" value="-.10"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="dailyMoodRoller" target="self"/>
+        </effect_group>
+    </buff>
+
+    <buff name="moodHungry" name_key="moodHungryName" description_key="moodHungryDesc" tooltip_key="moodHungryName" icon="ui_game_symbol_hunger" icon_color="200,100,100" remove_on_death="false">
+        <stack_type value="ignore"/><duration value="3000"/>
+        <effect_group>
+            <passive_effect name="FoodMax" operation="perc_add" value="-.10"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="dailyMoodRoller" target="self"/>
+        </effect_group>
+    </buff>
+
+    <buff name="moodGloomy" name_key="moodGloomyName" description_key="moodGloomyDesc" tooltip_key="moodGloomyName" icon="ui_game_symbol_concussion" icon_color="200,100,100" remove_on_death="false">
+        <stack_type value="ignore"/><duration value="3000"/>
+        <effect_group>
+            <passive_effect name="StaminaChangeOT" operation="perc_add" value="-.10"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="dailyMoodRoller" target="self"/>
+        </effect_group>
+    </buff>
+
+    <buff name="moodCold" name_key="moodColdName" description_key="moodColdDesc" tooltip_key="moodColdName" icon="ui_game_symbol_cold" icon_color="200,100,100" remove_on_death="false">
+        <stack_type value="ignore"/><duration value="3000"/>
+        <effect_group>
+            <passive_effect name="HypothermalResist" operation="base_add" value="-10"/>
+            <triggered_effect trigger="onSelfBuffFinish" action="AddBuff" buff="dailyMoodRoller" target="self"/>
+        </effect_group>
+    </buff>
+
+
+</append>
+</configs>
